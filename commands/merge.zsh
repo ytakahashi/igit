@@ -1,5 +1,5 @@
 
-_fgit_checkout(){
+_fgit_merge(){
 
     local branch
     
@@ -22,10 +22,10 @@ _fgit_checkout(){
         remote_name=${remote_branch%%/*}
         branch_name=${remote_branch#*/}
 
-        print -z "git checkout -b $branch_name $remote_name/$branch_name"
+        print -z "git merge $remote_name/$branch_name"
 
     else
-        print -z "git checkout $branch"
+        print -z "git merge $branch"
     fi
 
 }

@@ -1,10 +1,11 @@
 
-FGIT_BASE_DIRECTORY=$(cd $(dirname $0); pwd)
-source ${FGIT_BASE_DIRECTORY}/commands/add.zsh
-source ${FGIT_BASE_DIRECTORY}/commands/branch.zsh
-source ${FGIT_BASE_DIRECTORY}/commands/checkout.zsh
-source ${FGIT_BASE_DIRECTORY}/commands/diff.zsh
-source ${FGIT_BASE_DIRECTORY}/commands/status.zsh
+_fgit_base_dir=$(cd $(dirname $0); pwd)
+source ${_fgit_base_dir}/commands/add.zsh
+source ${_fgit_base_dir}/commands/branch.zsh
+source ${_fgit_base_dir}/commands/checkout.zsh
+source ${_fgit_base_dir}/commands/diff.zsh
+source ${_fgit_base_dir}/commands/merge.zsh
+source ${_fgit_base_dir}/commands/status.zsh
 
 
 fgit() {
@@ -21,6 +22,7 @@ fgit() {
 
     case $1 in
         "add")
+            [[ -z "$(git status -uall --short)" ]] && return 0
             _fgit_add ;;
         "branch")
             shift
@@ -28,9 +30,13 @@ fgit() {
         "checkout")
             _fgit_checkout ;;
         "diff")
+            [[ -z "$(git status -uall --short)" ]] && return 0
             _fgit_diff ;;
         "status")
+            [[ -z "$(git status -uall --short)" ]] && return 0
             _fgit_status ;;
+        "merge")
+            _fgit_merge ;;
         "help")
             _fgit_usage ;;
         *)
@@ -62,6 +68,7 @@ Commands:
     branch [option]
     checkout
     diff
+    merge
     status
     help
 
