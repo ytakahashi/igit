@@ -1,8 +1,8 @@
 
-_fgit_branch(){
+_igit_branch(){
 
     if [ $# -lt 1 ]; then
-        echo "'fgit branch' requires option."
+        echo "'igit branch' requires option."
         return 1
     fi
 
@@ -17,7 +17,7 @@ _fgit_branch(){
         git branch |
         grep -v "\*" |
         cut -b 3- |
-        _fzf_for_fgit --preview 'git diff --color=always {-1}'
+        _fzf_for_igit --preview 'git diff --color=always {-1}'
     )
 
     if [[ -z "$branch" ]]; then

@@ -1,5 +1,5 @@
 
-_fgit_merge(){
+_igit_merge(){
 
     local branch
     
@@ -7,7 +7,7 @@ _fgit_merge(){
         git branch -a |
         egrep -v "\*|origin/HEAD" |
         cut -b 3- |
-        _fzf_for_fgit --preview 'git diff --color=always {-1}'
+        _fzf_for_igit --preview 'git diff --color=always {-1}'
     )
 
     if [[ -z "$branch" ]]; then

@@ -1,14 +1,14 @@
 
-_fgit_base_dir=$(cd $(dirname $0); pwd)
-source ${_fgit_base_dir}/commands/add.zsh
-source ${_fgit_base_dir}/commands/branch.zsh
-source ${_fgit_base_dir}/commands/checkout.zsh
-source ${_fgit_base_dir}/commands/diff.zsh
-source ${_fgit_base_dir}/commands/merge.zsh
-source ${_fgit_base_dir}/commands/status.zsh
+_igit_base_dir=$(cd $(dirname $0); pwd)
+source ${_igit_base_dir}/commands/add.zsh
+source ${_igit_base_dir}/commands/branch.zsh
+source ${_igit_base_dir}/commands/checkout.zsh
+source ${_igit_base_dir}/commands/diff.zsh
+source ${_igit_base_dir}/commands/merge.zsh
+source ${_igit_base_dir}/commands/status.zsh
 
 
-fgit() {
+igit() {
     
     git rev-parse --is-inside-work-tree > /dev/null
     if [ $? -gt 0 ]; then
@@ -16,38 +16,38 @@ fgit() {
     fi
 
     if [ $# -lt 1 ]; then
-        echo "Specify command. See 'fgit help'"
+        echo "Specify command. See 'igit help'"
         return 1
     fi
 
     case $1 in
         "add")
             [[ -z "$(git status -uall --short)" ]] && return 0
-            _fgit_add ;;
+            _igit_add ;;
         "branch")
             shift
-            _fgit_branch $@ ;;
+            _igit_branch $@ ;;
         "checkout")
-            _fgit_checkout ;;
+            _igit_checkout ;;
         "diff")
             [[ -z "$(git status -uall --short)" ]] && return 0
-            _fgit_diff ;;
+            _igit_diff ;;
         "status")
             [[ -z "$(git status -uall --short)" ]] && return 0
-            _fgit_status ;;
+            _igit_status ;;
         "merge")
-            _fgit_merge ;;
+            _igit_merge ;;
         "help")
-            _fgit_usage ;;
+            _igit_usage ;;
         *)
-            echo "'$1' is not a valid option. See 'fgit help'"
+            echo "'$1' is not a valid option. See 'igit help'"
             return 1
     esac
 
 }
 
 
-_fzf_for_fgit() {
+_fzf_for_igit() {
     fzf --height 75% \
         --reverse \
         --border \
@@ -58,10 +58,10 @@ _fzf_for_fgit() {
 }
 
 
-_fgit_usage () {
+_igit_usage () {
 cat << EOF
 Usage:
-    fgit [command]
+    igit [command]
 
 Commands:
     add
