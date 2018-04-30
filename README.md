@@ -1,6 +1,6 @@
-# fgit
+# igit
 
-interactive git command using fzf
+`igit` - interactive git command using fzf
 
 
 ## Requirements
@@ -14,24 +14,24 @@ interactive git command using fzf
 ### With [zplug](https://github.com/zplug/zplug) :hibiscus:
 
 ```zsh
-zplug "ytakahashi/fgit"
+zplug "ytakahashi/igit"
 ```
 
 ### Manually
 
-Clone this repository and load `fgit.plugin.zsh` from `.zshrc`
+Clone this repository and load `igit.plugin.zsh` from `.zshrc`
 
 ```.zshrc
-source /path/to/fgit.plugin.zsh
+source /path/to/igit.plugin.zsh
 ```
 
 ## Usage
 
-### fgit help
+### igit help
 
 Show available commands.  
 
-### fgit add
+### igit add
 
 Show current status and add selected files.  
 
@@ -45,13 +45,13 @@ Show current status and add selected files.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>                    | Cancel                 |
 
 
-### fgit branch
+### igit branch
 
 Show local branchs and delete a selected branch.  
 This command requires option.  
 
-- `fgit branch -d`: behaves like git branch -d `<BRANCH_NAME>`
-- `fgit branch -D`: behaves like git branch -D `<BRANCH_NAME>`
+- `igit branch -d`: behaves like git branch -d `<BRANCH_NAME>`
+- `igit branch -D`: behaves like git branch -D `<BRANCH_NAME>`
 
 | Key                                        | Description            |
 | ------------------------------------------ | ---------------------- |
@@ -61,7 +61,7 @@ This command requires option.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
-### fgit checkout
+### igit checkout
 
 Show local and remote branchs and switch to a selected branch.  
 If remote branch is selected, new local branch is created and switch to the branch.  
@@ -74,7 +74,7 @@ If remote branch is selected, new local branch is created and switch to the bran
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
-### fgit diff
+### igit diff
 
 Shows current status and see diff of selected file.  
 Preview window shows the current content of a file.  
@@ -87,7 +87,7 @@ Preview window shows the current content of a file.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
-### fgit merge
+### igit merge
 
 Show local and remote branchs and merge selected branch into current branch.  
 
