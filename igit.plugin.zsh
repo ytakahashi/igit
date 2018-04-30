@@ -6,6 +6,7 @@ source ${_igit_base_dir}/commands/checkout.zsh
 source ${_igit_base_dir}/commands/diff.zsh
 source ${_igit_base_dir}/commands/merge.zsh
 source ${_igit_base_dir}/commands/status.zsh
+source ${_igit_base_dir}/commands/stash.zsh
 
 
 igit() {
@@ -32,11 +33,14 @@ igit() {
         "diff")
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_diff ;;
+        "merge")
+            _igit_merge ;;
         "status")
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_status ;;
-        "merge")
-            _igit_merge ;;
+        "stash")
+            shift
+            _igit_stash $@ ;;
         "help")
             _igit_usage ;;
         *)
@@ -54,6 +58,7 @@ _fzf_for_igit() {
         --ansi \
         --color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104 \
         --color info:183,prompt:110,spinner:107,pointer:167,marker:215 \
+        --preview-window down:70% \
         $@
 }
 
