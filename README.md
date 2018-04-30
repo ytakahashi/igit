@@ -50,8 +50,7 @@ Show current status and add selected files.
 Show local branchs and delete a selected branch.  
 This command requires option.  
 
-- `igit branch -d`: behaves like git branch -d `<BRANCH_NAME>`
-- `igit branch -D`: behaves like git branch -D `<BRANCH_NAME>`
+- `igit branch delete`: deletes selected branch
 
 | Key                                        | Description            |
 | ------------------------------------------ | ---------------------- |
@@ -97,4 +96,20 @@ Show local and remote branchs and merge selected branch into current branch.  
 | <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
 | <kbd>Enter</kbd>                           | Merge                  |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
+
+
+### igit stash
+
+Show stashes. Following subcomand is required.
+  
+- `igit stash apply`: applies selected stash to current branch
+- `igit stash drop`: deletes selected stash
+
+| Key                                        | Description                  |
+| ------------------------------------------ | ---------------------------- |
+| <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                         |
+| <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                           |
+| <kbd>Enter</kbd>                           | Apply/Drop                   |
+| <kbd>Ctrl</kbd>+<kbd>d</kbd>               | See diff with current branch |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                       |
 

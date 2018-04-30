@@ -6,7 +6,7 @@ _igit_branch(){
         return 1
     fi
 
-    if [ $1 != "-d" -a $1 != "-D" ]; then
+    if [ $1 != "delete" ]; then
         echo "invalid option '$1'."
         return 1
     fi
@@ -24,6 +24,6 @@ _igit_branch(){
         return 0
     fi
 
-    git branch $1 $branch
+    print -z "git branch -D $branch"
 
 }

@@ -64,23 +64,29 @@ _fzf_for_igit() {
 
 
 _igit_usage () {
-cat << EOF
-Usage:
-    igit [command]
 
-Commands:
+echo -e "\n\e[32mUsage:\e[m"
+cat << EOF
+    igit [command]
+EOF
+echo -e "\e[32mCommands:\e[m"
+cat << EOF
     add
-    branch [option]
+    branch [subcommand]
     checkout
     diff
     merge
     status
+    stash [subcommand]
     help
-
-Options:
-    branch
-        -d: deletes selected branch if it has already been merged to another branch
-        -D: deletes selected branch
-
 EOF
+echo -e "\e[32mSubommands:\e[m"
+cat << EOF
+    branch
+        delete: deletes selected branch
+    stash
+        apply: applies selected stash to current branch
+        drop:  deletes selected stash
+EOF
+
 }
