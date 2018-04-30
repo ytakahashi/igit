@@ -15,7 +15,7 @@ _igit_stash() {
 
     while stash=$(
         git stash list |
-        _fzf_for_igit --expect=ctrl-d +m --preview 'git diff --color=always {-1}'); do
+        _fzf_for_igit --expect=ctrl-d +m --preview 'git diff --color=always {1}'); do
         
         cmd=$(sed -n 1P <<< "$stash")
         st=$(sed -n 2P <<< "$stash")
