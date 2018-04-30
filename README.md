@@ -48,7 +48,7 @@ Show current status and add selected files.
 ### igit branch
 
 Show local branchs and delete a selected branch.  
-This command requires option.  
+This command requires subcommand.  
 
 - `igit branch delete`: deletes selected branch
 
@@ -100,7 +100,7 @@ Show local and remote branchs and merge selected branch into current branch.  
 
 ### igit stash
 
-Show stashes. Following subcomand is required.
+Show stashes. This command requires subcommand.
   
 - `igit stash apply`: applies selected stash to current branch
 - `igit stash drop`: deletes selected stash
