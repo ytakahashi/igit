@@ -57,6 +57,7 @@ This command requires subcommand.
 | <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                   |
 | <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
 | <kbd>Enter</kbd>                           | Delete                 |
+| <kbd>Ctrl</kbd>+<kbd>d</kbd>               | See diff               |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
