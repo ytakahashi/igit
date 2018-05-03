@@ -57,6 +57,7 @@ This command requires subcommand.
 | <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                   |
 | <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
 | <kbd>Enter</kbd>                           | Delete                 |
+| <kbd>Ctrl</kbd>+<kbd>d</kbd>               | See diff               |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
@@ -70,6 +71,7 @@ If remote branch is selected, new local branch is created and switch to the bran
 | <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                   |
 | <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
 | <kbd>Enter</kbd>                           | Checkout               |
+| <kbd>Ctrl</kbd>+<kbd>d</kbd>               | See diff               |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
@@ -95,6 +97,7 @@ Show local and remote branchs and merge selected branch into current branch.  
 | <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                   |
 | <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
 | <kbd>Enter</kbd>                           | Merge                  |
+| <kbd>Ctrl</kbd>+<kbd>d</kbd>               | See diff               |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 

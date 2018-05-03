@@ -1,16 +1,18 @@
 
 _igit_diff() {
 
-    local files q selected
-    while files=$(
+    local file 
+    while file=$(
         git -c color.status=always status -uall --short | 
-        awk '{printf "[%s] ", $1; $1="" ;print $2}' | 
-        _fzf_for_igit --multi --expect=ctrl-a --preview 'less {-1}'); do
-        q=$(head -1 <<< "$files")
-        selected=(`awk '{print $2}' <<< "$files"`)
-        
-        [[ -z "$selected" ]] && continue
-        git diff --color=always $selected | less -R
+        awk '!match($0, /  /)' | 
+        _fzf_for_igit --preview 'git diff --color=always -- {2}'); do
+
+        if [[ -z "$file" ]]; then
+            return 0
+        fi
+
+        local f=(`awk '{print $2}' <<< "$file"`)
+        git diff --color=always -U99999 -- $f | less -R
     done
     
 }
