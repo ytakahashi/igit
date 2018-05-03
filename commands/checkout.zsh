@@ -9,7 +9,7 @@ _igit_checkout(){
         _fzf_for_igit +m --expect=ctrl-d --preview 'git diff --color=always {}'); do
 
         if [[ -z "$branch" ]]; then
-            returån 0
+            return 0
         fi
 
         cmd=$(sed -n 1P <<< "$branch")
