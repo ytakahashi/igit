@@ -3,7 +3,9 @@ _igit_base_dir=$(cd $(dirname $0); pwd)
 source ${_igit_base_dir}/commands/add.zsh
 source ${_igit_base_dir}/commands/branch.zsh
 source ${_igit_base_dir}/commands/checkout.zsh
+source ${_igit_base_dir}/commands/cherry-pick.zsh
 source ${_igit_base_dir}/commands/diff.zsh
+source ${_igit_base_dir}/commands/log.zsh
 source ${_igit_base_dir}/commands/merge.zsh
 source ${_igit_base_dir}/commands/status.zsh
 source ${_igit_base_dir}/commands/stash.zsh
@@ -30,11 +32,15 @@ igit() {
             _igit_branch $@ ;;
         "checkout")
             _igit_checkout ;;
+        "cherry-pick")
+            _igit_cherry_pick ;;
         "diff")
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_diff ;;
         "merge")
             _igit_merge ;;
+        "log")
+            _igit_log ;;
         "status")
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_status ;;
@@ -74,7 +80,9 @@ cat << EOF
     add
     branch [subcommand]
     checkout
+    cherry-pick
     diff
+    log
     merge
     status
     stash [subcommand]

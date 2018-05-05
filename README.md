@@ -75,6 +75,19 @@ If remote branch is selected, new local branch is created and switch to the bran
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
 
 
+### igit cherry-pick
+
+Show commit log and cherry-pick selected commit.  
+
+| Key                                        | Description            |
+| ------------------------------------------ | ---------------------- |
+| <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                   |
+| <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
+| <kbd>Enter</kbd>                           | See commit             |
+| <kbd>Ctrl</kbd>+<kbd>p</kbd>               | Cherry-pick            |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
+
+
 ### igit diff
 
 Shows current status and see diff of selected file.  
@@ -86,6 +99,19 @@ Preview window shows the current content of a file.
 | <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                     |
 | <kbd>Enter</kbd>                           | See diff               |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                 |
+
+
+### igit log
+
+Show log of branch.  
+
+| Key                                        | Description                 |
+| ------------------------------------------ | --------------------------- |
+| <kbd>Ctrl</kbd>+<kbd>j</kbd>/<kbd>n</kbd>  | Down                        |
+| <kbd>Ctrl</kbd>+<kbd>k</kbd>/<kbd>p</kbd>  | Up                          |
+| <kbd>Enter</kbd>                           | See commit                  |
+| <kbd>Ctrl</kbd>+<kbd>r</kbd>               | Reset (hard) to the commit  |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd>               | Cancel                      |
 
 
 ### igit merge
