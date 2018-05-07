@@ -1,34 +1,35 @@
 
 _igit_stash() {
 
-    if [ $# -lt 1 ]; then
-        echo "'igit stash' requires option."
-        return 1
-    fi
-
-    if [ $1 != "apply" -a $1 != "drop" ]; then
-        echo "invalid option '$1'."
-        return 1
-    fi
-
-    local stash cmd st
+    local stash
 
     while stash=$(
         git stash list |
-        _fzf_for_igit --expect=ctrl-d +m --preview 'git diff --color=always {1}'); do
+        _fzf_for_igit +m --expect=ctrl-s,alt-a,alt-d \
+        --header "ctrl-s: see diff, alt-a: apply selected stash, alt-d: drop selected stash" \
+        --preview 'git diff --color=always {1}'); do
         
-        if [[ -z "$stash" ]]; then
+        if [[ -z $stash ]]; then
             return 0
         fi
 
-        cmd=$(sed -n 1P <<< "$stash")
-        st=$(sed -n 2P <<< "$stash")
+        local cmd=$(sed -n 1P <<< "$stash")
+        local st=$(sed -n 2P <<< "$stash")
+
+        if [[ -z $cmd ]]; then
+            return 0
+        fi
 
         local name=$(awk -F ':' {'print $1'} <<< "$st")
-        if [ "$cmd" = ctrl-d ]; then
+        if [ $cmd = ctrl-s ]; then
             git diff --color=always $name | less -R
+        elif [ $cmd = alt-a ]; then
+            print -z "git stash apply $name"
+            break
+        elif [ $cmd = alt-d ]; then
+            print -z "git stash drop $name"
+            break
         else
-            print -z "git stash $1 $name"
             break
         fi
     done

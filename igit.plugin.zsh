@@ -2,12 +2,9 @@
 _igit_base_dir=$(cd $(dirname $0); pwd)
 source ${_igit_base_dir}/commands/add.zsh
 source ${_igit_base_dir}/commands/branch.zsh
-source ${_igit_base_dir}/commands/checkout.zsh
 source ${_igit_base_dir}/commands/cherry-pick.zsh
 source ${_igit_base_dir}/commands/diff.zsh
 source ${_igit_base_dir}/commands/log.zsh
-source ${_igit_base_dir}/commands/merge.zsh
-source ${_igit_base_dir}/commands/status.zsh
 source ${_igit_base_dir}/commands/stash.zsh
 
 
@@ -28,10 +25,7 @@ igit() {
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_add ;;
         "branch")
-            shift
-            _igit_branch $@ ;;
-        "checkout")
-            _igit_checkout ;;
+            _igit_branch ;;
         "cherry-pick")
             _igit_cherry_pick ;;
         "diff")
@@ -41,12 +35,8 @@ igit() {
             _igit_merge ;;
         "log")
             _igit_log ;;
-        "status")
-            [[ -z "$(git status -uall --short)" ]] && return 0
-            _igit_status ;;
         "stash")
-            shift
-            _igit_stash $@ ;;
+            _igit_stash ;;
         "help")
             _igit_usage ;;
         *)
@@ -78,23 +68,26 @@ EOF
 echo -e "\e[32mCommands:\e[m"
 cat << EOF
     add
-    branch [subcommand]
-    checkout
+    branch
     cherry-pick
     diff
     log
-    merge
-    status
-    stash [subcommand]
-    help
-EOF
-echo -e "\e[32mSubommands:\e[m"
-cat << EOF
-    branch
-        delete: deletes selected branch
     stash
-        apply: applies selected stash to current branch
-        drop:  deletes selected stash
+    help
 EOF
 
 }
+
+_igit() {
+  _values \
+    'commands' \
+    'add' \
+    'branch' \
+    'cherry-pick' \
+    'diff' \
+    'log' \
+    'stash' \
+    'help'
+}
+
+compdef _igit igit
