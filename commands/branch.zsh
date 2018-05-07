@@ -24,11 +24,7 @@ _igit_branch(){
         if [ $cmd = ctrl-s ]; then
             git diff --color=always $br | less -R
 
-        elif [ $cmd = alt-d ]; then
-            print -z "git branch -D $br"
-            break
-
-        elif [ $cmd = alt-c -o $cmd = alt-m ]; then
+        elif [ $cmd = alt-c -o $cmd = alt-m -o $cmd = alt-d ]; then
 
             if  [[ $br == remotes/* ]]; then
                 local remote_branch=${br#remotes/}
@@ -38,14 +34,22 @@ _igit_branch(){
 
                 if [ $cmd = alt-c ]; then
                     print -z "git checkout -b $branch_name $remote_name/$branch_name"
+                elif [ $cmd = alt-d ]; then
+                    if [ $branch_name = "master" -o $branch_name = "develop" ]; then
+                        echo "Branch $remote_name/$branch_name cannot be deleted."
+                        return 1
+                    fi
+                    print -z "git push --delete $remote_name $branch_name"
                 else
                     print -z "git merge $remote_name/$branch_name"
                 fi
                 break
 
             else
-                if [ $cmd = ctrl-c ]; then
+                if [ $cmd = alt-c ]; then
                     print -z "git checkout $br"
+                elif [ $cmd = alt-d ]; then
+                    print -z "git branch -D $br"
                 else
                     print -z "git merge $br"
                 fi

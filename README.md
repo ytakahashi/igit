@@ -43,7 +43,7 @@ Basic operation on fzf window.
 | Key                           | Description                                                                     |
 | ----------------------------- | ------------------------------------------------------------------------------- |
 | <kbd>Ctrl</kbd>+<kbd>s</kbd>  | See selected file/branch/commit                                                 |
-| <kbd>Alt</kbd>+ key           | Put git command using selected file/branch/commit onto the editing buffer stack |
+| <kbd>Alt</kbd>+ `key`         | Put git command using selected file/branch/commit onto the editing buffer stack |
 
 
 ### igit help
@@ -83,7 +83,6 @@ Show commit log and cherry-pick selected commit.
 ### igit diff
 
 Shows current status and see diff of selected file.  
-Preview window shows the current content of a file.  
 
 
 ### igit log
