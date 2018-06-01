@@ -31,8 +31,6 @@ igit() {
         "diff")
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_diff ;;
-        "merge")
-            _igit_merge ;;
         "log")
             _igit_log ;;
         "stash")
@@ -58,7 +56,6 @@ _fzf_for_igit() {
         $@
 }
 
-
 _igit_usage () {
 
 echo -e "\n\e[32mUsage:\e[m"
@@ -79,15 +76,45 @@ EOF
 }
 
 _igit() {
-  _values \
-    'commands' \
-    'add' \
-    'branch' \
-    'cherry-pick' \
-    'diff' \
-    'log' \
-    'stash' \
-    'help'
+    _values \
+        'commands' \
+        'add' \
+        'branch' \
+        'cherry-pick' \
+        'diff' \
+        'log' \
+        'stash' \
+        'help'
 }
 
 compdef _igit igit
+
+_zle_add() {
+    _igit_add
+    zle reset-prompt
+}
+
+_zle_branch() {
+    _igit_branch
+    zle reset-prompt
+}
+
+_zle_log() {
+    _igit_log
+    zle reset-prompt
+}
+
+_zle_stash() {
+    _igit_stash
+    zle reset-prompt
+}
+
+zle -N _zle_add
+zle -N _zle_branch
+zle -N _zle_log 
+zle -N _zle_stash
+
+bindkey '^G^A' _zle_add
+bindkey '^G^B' _zle_branch
+bindkey '^G^L' _zle_log
+bindkey '^G^S' _zle_stash
