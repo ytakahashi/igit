@@ -23,7 +23,11 @@ _igit_add() {
         if [ $cmd = ctrl-s ]; then
             git diff --color=always $adding | less -R
         elif [ $cmd = alt-a ]; then
-            print -z "git add $adding"
+            git add $adding
+            printf "\n\e[36mAdded files:\e[0m\n"
+            for f in $adding; do
+                printf " \e[32m $f\e[0m\n"
+            done
             break
         else
             break
