@@ -27,7 +27,7 @@ source /path/to/igit.plugin.zsh
 
 ### Basic usage
 
-Basic operation on fzf window.   
+Basic operation on fzf window.  
 
 | Key                                                         | Description            |
 | :---------------------------------------------------------- | :--------------------- |
@@ -104,4 +104,3 @@ Following key bindings are available.
 | <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>b</kbd>   | igit branch            |
 | <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>l</kbd>   | igit log               |
 | <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>s</kbd>   | igit stash             |
-
