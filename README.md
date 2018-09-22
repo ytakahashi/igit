@@ -94,6 +94,14 @@ Show stashes.
 | <kbd>Alt</kbd>+<kbd>a</kbd>                | Apply selected stash         |
 | <kbd>Alt</kbd>+<kbd>d</kbd>                | Drop selected stash          |
 
+### igit tag
+
+Show tags.
+
+| Key                                        | Description                  |
+| :----------------------------------------- | :--------------------------- |
+| <kbd>Alt</kbd>+<kbd>c</kbd>                | Checkout selected tag        |
+
 ## Key Bingings
 
 Following key bindings are available.
