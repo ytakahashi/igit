@@ -2,6 +2,8 @@
 
 `igit` - interactive git command using fzf
 
+![igit](https://user-images.githubusercontent.com/26239560/45913024-20246d80-be66-11e8-904c-63bad327e1ce.gif)
+
 ## Requirements
 
 - zsh
@@ -93,6 +95,14 @@ Show stashes.
 | :----------------------------------------- | :--------------------------- |
 | <kbd>Alt</kbd>+<kbd>a</kbd>                | Apply selected stash         |
 | <kbd>Alt</kbd>+<kbd>d</kbd>                | Drop selected stash          |
+
+### igit tag
+
+Show tags.
+
+| Key                                        | Description                  |
+| :----------------------------------------- | :--------------------------- |
+| <kbd>Alt</kbd>+<kbd>c</kbd>                | Checkout selected tag        |
 
 ## Key Bingings
 

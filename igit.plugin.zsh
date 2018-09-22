@@ -1,4 +1,3 @@
-
 _igit_base_dir=$(cd $(dirname $0); pwd)
 source ${_igit_base_dir}/commands/add.zsh
 source ${_igit_base_dir}/commands/branch.zsh
@@ -6,6 +5,7 @@ source ${_igit_base_dir}/commands/cherry-pick.zsh
 source ${_igit_base_dir}/commands/diff.zsh
 source ${_igit_base_dir}/commands/log.zsh
 source ${_igit_base_dir}/commands/stash.zsh
+source ${_igit_base_dir}/commands/tag.zsh
 
 
 igit() {
@@ -35,6 +35,8 @@ igit() {
             _igit_log ;;
         "stash")
             _igit_stash ;;
+        "tag")
+            _igit_tag ;;
         "help")
             _igit_usage ;;
         *)
@@ -70,6 +72,7 @@ cat << EOF
     diff
     log
     stash
+    tag
     help
 EOF
 
@@ -84,6 +87,7 @@ _igit() {
         'diff' \
         'log' \
         'stash' \
+        'tag' \
         'help'
 }
 
