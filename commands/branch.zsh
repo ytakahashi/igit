@@ -6,8 +6,8 @@ _igit_branch(){
         git branch -a |
         egrep -v "\*|origin/HEAD" |
         cut -b 3- |
-        _fzf_for_igit +m --expect=ctrl-s,alt-c,alt-d,alt-m \
-        --header "ctrl-s: see diff, alt-c: checkout, alt-d: delete branch, alt-m: merge " \
+        _fzf_for_igit -m --expect=ctrl-s,alt-c,alt-d,alt-m \
+        --header "ctrl-s: see diff, alt-c: checkout, alt-d: delete branch, alt-m: merge" \
         --preview 'git diff --color=always {}'); do
 
         if [[ -z $branch ]]; then
@@ -15,10 +15,16 @@ _igit_branch(){
         fi
 
         local cmd=$(sed -n 1P <<< "$branch")
-        local br=$(sed -n 2P <<< "$branch")
+        local br=(`awk 'NR>1{print $1}' <<< "$branch"`)
 
         if [[ -z $cmd ]]; then
             return 0
+        fi
+
+        local branches=(`echo $br`)
+        if [ $cmd != alt-d -a ${#branches[@]} -gt 1 ] ; then
+            echo "multiple branches can only be selected when input command is delete (alt-d)"
+            return 1
         fi
 
         if [ $cmd = ctrl-s ]; then
