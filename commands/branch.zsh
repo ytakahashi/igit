@@ -1,4 +1,3 @@
-
 _igit_branch(){
 
     local branch
@@ -67,6 +66,5 @@ _igit_branch(){
         fi
 
     done
-
 }
   
