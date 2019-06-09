@@ -35,5 +35,4 @@ _igit_log() {
             fi
         fi
     done
-
 }
