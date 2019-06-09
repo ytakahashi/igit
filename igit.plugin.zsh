@@ -16,8 +16,8 @@ igit() {
     fi
 
     if [ $# -lt 1 ]; then
-        echo "Specify command. See 'igit help'"
-        return 1
+        _igit_usage
+        return 0
     fi
 
     case $1 in
@@ -43,7 +43,6 @@ igit() {
             echo "'$1' is not a valid option. See 'igit help'"
             return 1
     esac
-
 }
 
 
@@ -75,7 +74,6 @@ cat << EOF
     tag
     help
 EOF
-
 }
 
 _igit() {

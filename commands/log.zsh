@@ -5,8 +5,8 @@ _igit_log() {
 
     while commit=$(git log --graph --color=always \
         --pretty=format:'%C(auto) %d %C(yellow) "%s"%C(green) %cr %C(black) - %h%C(reset)' |
-        _fzf_for_igit +m --expect=ctrl-s,alt-r \
-        --header "ctrl-s: see the commit, alt-r: reset to the commit" \
+        _fzf_for_igit +m --expect=ctrl-s,alt-h,alt-s \
+        --header "ctrl-s: see the commit, alt-h: reset hard to the commit, alt-s: reset soft to the commit" \
         --preview 'if [[ {-1} =~ "[a-f0-9]+" ]]; then git show --color=always {-1}; fi'); do
 
         if [[ -z $commit ]]; then
@@ -24,13 +24,15 @@ _igit_log() {
         if [ ${#hash} -ge 7 ]; then
             if [ $cmd = ctrl-s ]; then
                 git show --color=always --pretty=fuller $hash | less -R
-            elif [ "$cmd" = alt-r ]; then
+            elif [ "$cmd" = alt-h ]; then
                 print -z "git reset --hard $hash"
+                break
+            elif [ "$cmd" = alt-s ]; then
+                print -z "git reset --soft $hash"
                 break
             else
                 break
             fi
         fi
     done
-
 }
