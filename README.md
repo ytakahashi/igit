@@ -85,7 +85,8 @@ Show log of branch.  
 
 | Key                                        | Description                 |
 | :----------------------------------------- | :-------------------------- |
-| <kbd>Alt</kbd>+<kbd>r</kbd>                | Reset (hard) to the commit  |
+| <kbd>Alt</kbd>+<kbd>h</kbd>                | Reset (hard) to the commit  |
+| <kbd>Alt</kbd>+<kbd>s</kbd>                | Reset (soft) to the commit  |
 
 ### igit stash
 
