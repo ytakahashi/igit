@@ -92,22 +92,22 @@ _igit() {
 compdef _igit igit
 
 _zle_add() {
-    _igit_add
+    igit add
     zle reset-prompt
 }
 
 _zle_branch() {
-    _igit_branch
+    igit branch
     zle reset-prompt
 }
 
 _zle_log() {
-    _igit_log
+    igit log
     zle reset-prompt
 }
 
 _zle_stash() {
-    _igit_stash
+    igit stash
     zle reset-prompt
 }
 
