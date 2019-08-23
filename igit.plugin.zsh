@@ -2,9 +2,12 @@ _igit_base_dir=$(cd $(dirname $0); pwd)
 source ${_igit_base_dir}/commands/add.zsh
 source ${_igit_base_dir}/commands/branch.zsh
 source ${_igit_base_dir}/commands/cherry-pick.zsh
+source ${_igit_base_dir}/commands/delete.zsh
 source ${_igit_base_dir}/commands/diff.zsh
 source ${_igit_base_dir}/commands/log.zsh
+source ${_igit_base_dir}/commands/merge.zsh
 source ${_igit_base_dir}/commands/stash.zsh
+source ${_igit_base_dir}/commands/switch.zsh
 source ${_igit_base_dir}/commands/tag.zsh
 
 
@@ -28,13 +31,19 @@ igit() {
             _igit_branch ;;
         "cherry-pick")
             _igit_cherry_pick ;;
+        "delete")
+            _igit_delete ;;
         "diff")
             [[ -z "$(git status -uall --short)" ]] && return 0
             _igit_diff ;;
         "log")
             _igit_log ;;
+        "merge")
+            _igit_merge ;;
         "stash")
             _igit_stash ;;
+        "switch")
+            _igit_switch ;;
         "tag")
             _igit_tag ;;
         "help")
@@ -68,9 +77,12 @@ cat << EOF
     add
     branch
     cherry-pick
+    delete
     diff
     log
+    merge
     stash
+    switch
     tag
     help
 EOF
@@ -82,9 +94,12 @@ _igit() {
         'add' \
         'branch' \
         'cherry-pick' \
+        'delete' \
         'diff' \
         'log' \
+        'merge' \
         'stash' \
+        'switch' \
         'tag' \
         'help'
 }
