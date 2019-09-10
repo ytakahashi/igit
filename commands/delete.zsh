@@ -2,7 +2,7 @@ _igit_delete(){
 
     local branch
     while branch=$(
-        git branch -a |
+        git branch |
         egrep -v "\*|origin/HEAD" |
         cut -b 3- |
         _fzf_for_igit --multi --expect=enter \
@@ -19,12 +19,7 @@ _igit_delete(){
             return 0
         fi
 
-        if  [[ $br == remotes/* ]]; then
-            echo "igit delete command does not delete remote branch(es)."
-            break
-        else
-            print -z "git branch -D $br"
-            break
-        fi
+        print -z "git branch -D $br"
+        break
     done
 }
