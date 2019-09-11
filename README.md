@@ -27,6 +27,14 @@ source /path/to/igit.plugin.zsh
 
 ## Usage
 
+### Available commands
+
+```shell
+% igit [command]
+```
+
+command: `add`, `branch`, `cherry-pick`, `delete`, `diff`, `log`, `merge`, `stash`, `switch`, `tag`
+
 ### Basic usage
 
 Basic operation on fzf window.  
