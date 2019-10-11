@@ -122,4 +122,4 @@ Following key bindings are available.
 | <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>a</kbd>   | igit add               |
 | <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>b</kbd>   | igit branch            |
 | <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>l</kbd>   | igit log               |
-| <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>s</kbd>   | igit stash             |
+| <kbd>Ctrl</kbd>+<kbd>g</kbd> <kbd>Ctrl</kbd>+<kbd>s</kbd>   | igit switch            |
