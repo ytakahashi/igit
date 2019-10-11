@@ -108,30 +108,30 @@ compdef _igit igit
 
 _zle_add() {
     igit add
-    zle reset-prompt
+    zle accept-line
 }
 
 _zle_branch() {
     igit branch
-    zle reset-prompt
+    zle accept-line
 }
 
 _zle_log() {
     igit log
-    zle reset-prompt
+    zle accept-line
 }
 
-_zle_stash() {
-    igit stash
-    zle reset-prompt
+_zle_switch() {
+    igit switch
+    zle accept-line
 }
 
 zle -N _zle_add
 zle -N _zle_branch
 zle -N _zle_log 
-zle -N _zle_stash
+zle -N _zle_switch
 
 bindkey '^G^A' _zle_add
 bindkey '^G^B' _zle_branch
 bindkey '^G^L' _zle_log
-bindkey '^G^S' _zle_stash
+bindkey '^G^S' _zle_switch
