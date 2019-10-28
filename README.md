@@ -91,10 +91,11 @@ Shows current status and see diff of selected file.
 
 Show log of branch.  
 
-| Key                                        | Description                 |
-| :----------------------------------------- | :-------------------------- |
-| <kbd>Alt</kbd>+<kbd>h</kbd>                | Reset (hard) to the commit  |
-| <kbd>Alt</kbd>+<kbd>s</kbd>                | Reset (soft) to the commit  |
+| Key                                        | Description                  |
+| :----------------------------------------- | :--------------------------- |
+| <kbd>Alt</kbd>+<kbd>h</kbd>                | Reset (hard) to the commit   |
+| <kbd>Alt</kbd>+<kbd>m</kbd>                | Reset (mixed) to the commit  |
+| <kbd>Alt</kbd>+<kbd>s</kbd>                | Reset (soft) to the commit   |
 
 ### igit stash
 
