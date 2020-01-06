@@ -72,7 +72,7 @@ Show local and remote branchs.
 | Key                                        | Description                               |
 | :----------------------------------------- | :---------------------------------------- |
 | <kbd>Alt</kbd>+<kbd>d</kbd>                | Delete selected branch                    |
-| <kbd>Alt</kbd>+<kbd>c</kbd>                | Switch to selected branch                 |
+| <kbd>Alt</kbd>+<kbd>s</kbd>                | Switch to selected branch                 |
 | <kbd>Alt</kbd>+<kbd>m</kbd>                | Merge selected branch into current branch |
 
 ### igit cherry-pick
