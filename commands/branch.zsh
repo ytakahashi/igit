@@ -5,8 +5,8 @@ _igit_branch(){
         git branch -a |
         egrep -v "\*|origin/HEAD" |
         cut -b 3- |
-        _fzf_for_igit -m --expect=ctrl-s,alt-c,alt-d,alt-m \
-        --header "ctrl-s: see diff, alt-c: checkout, alt-d: delete branch, alt-m: merge" \
+        _fzf_for_igit -m --expect=ctrl-s,alt-s,alt-d,alt-m \
+        --header "ctrl-s: see diff, alt-s: switch, alt-d: delete branch, alt-m: merge" \
         --preview 'git diff --color=always {}'); do
 
         if [[ -z $branch ]]; then
@@ -29,7 +29,7 @@ _igit_branch(){
         if [ $cmd = ctrl-s ]; then
             git diff --color=always $br | less -R
 
-        elif [ $cmd = alt-c -o $cmd = alt-m -o $cmd = alt-d ]; then
+        elif [ $cmd = alt-s -o $cmd = alt-m -o $cmd = alt-d ]; then
 
             if  [[ $br == remotes/* ]]; then
                 local remote_branch=${br#remotes/}
@@ -37,8 +37,8 @@ _igit_branch(){
                 local remote_name=${remote_branch%%/*}
                 local branch_name=${remote_branch#*/}
 
-                if [ $cmd = alt-c ]; then
-                    print -z "git checkout -b $branch_name $remote_name/$branch_name"
+                if [ $cmd = alt-s ]; then
+                    print -z "git switch -c $branch_name $remote_name/$branch_name"
                 elif [ $cmd = alt-d ]; then
                     if [ $branch_name = "master" -o $branch_name = "develop" ]; then
                         echo "Branch $remote_name/$branch_name cannot be deleted."
@@ -51,8 +51,8 @@ _igit_branch(){
                 break
 
             else
-                if [ $cmd = alt-c ]; then
-                    print -z "git checkout $br"
+                if [ $cmd = alt-s ]; then
+                    print -z "git switch $br"
                 elif [ $cmd = alt-d ]; then
                     print -z "git branch -D $br"
                 else
@@ -67,4 +67,3 @@ _igit_branch(){
 
     done
 }
-  
