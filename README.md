@@ -112,7 +112,7 @@ Show tags.
 
 | Key                                        | Description                  |
 | :----------------------------------------- | :--------------------------- |
-| <kbd>Alt</kbd>+<kbd>c</kbd>                | Checkout selected tag        |
+| <kbd>Alt</kbd>+<kbd>s</kbd>                | Switch to selected tag       |
 
 ## Key Bingings
 

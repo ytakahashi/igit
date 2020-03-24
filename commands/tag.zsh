@@ -3,8 +3,8 @@ _igit_tag(){
     local tag
     while tag=$(
         git tag |
-        _fzf_for_igit +m --expect=ctrl-s,alt-c \
-        --header "ctrl-s: show the tag, alt-c: checkout" \
+        _fzf_for_igit +m --expect=ctrl-s,alt-s \
+        --header "ctrl-s: show the tag, alt-s: switch" \
         --preview 'git show --color=always {}'); do
 
         if [[ -z $tag ]]; then
@@ -20,12 +20,9 @@ _igit_tag(){
 
         if [ $cmd = ctrl-s ]; then
             git show --color=always $t | less -R
-        elif [ $cmd = alt-c ]; then
-            print -z "git checkout refs/tags/$t"
+        elif [ $cmd = alt-s ]; then
+            print -z "git switch --detach refs/tags/$t"
             break
         fi
-
     done
-
 }
-  
