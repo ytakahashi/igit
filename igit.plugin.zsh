@@ -12,15 +12,15 @@ source ${_igit_base_dir}/commands/tag.zsh
 
 
 igit() {
-    
-    git rev-parse --is-inside-work-tree > /dev/null
-    if [ $? -gt 0 ]; then
-        return 1
-    fi
-
     if [ $# -lt 1 ]; then
         _igit_usage
         return 0
+    fi
+
+    git rev-parse --is-inside-work-tree > /dev/null 2>&1
+    if [ $? -gt 0 ]; then
+        echo "igit: not a git repository"
+        return 1
     fi
 
     case $1 in
@@ -49,7 +49,7 @@ igit() {
         "help")
             _igit_usage ;;
         *)
-            echo "'$1' is not a valid option. See 'igit help'"
+            echo "igit: '$1' is not an igit command. See 'igit help'"
             return 1
     esac
 }
@@ -116,8 +116,18 @@ _zle_branch() {
     zle accept-line
 }
 
+_zle_delete() {
+    igit delete
+    zle accept-line
+}
+
 _zle_log() {
     igit log
+    zle accept-line
+}
+
+_zle_merge() {
+    igit merge
     zle accept-line
 }
 
@@ -128,10 +138,14 @@ _zle_switch() {
 
 zle -N _zle_add
 zle -N _zle_branch
-zle -N _zle_log 
+zle -N _zle_delete
+zle -N _zle_log
+zle -N _zle_merge
 zle -N _zle_switch
 
 bindkey '^G^A' _zle_add
 bindkey '^G^B' _zle_branch
+bindkey '^G^D' _zle_delete
 bindkey '^G^L' _zle_log
+bindkey '^G^M' _zle_merge
 bindkey '^G^S' _zle_switch
