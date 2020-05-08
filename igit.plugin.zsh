@@ -116,11 +116,6 @@ _zle_branch() {
     zle accept-line
 }
 
-_zle_delete() {
-    igit delete
-    zle accept-line
-}
-
 _zle_log() {
     igit log
     zle accept-line
@@ -138,14 +133,12 @@ _zle_switch() {
 
 zle -N _zle_add
 zle -N _zle_branch
-zle -N _zle_delete
 zle -N _zle_log
 zle -N _zle_merge
 zle -N _zle_switch
 
 bindkey '^G^A' _zle_add
 bindkey '^G^B' _zle_branch
-bindkey '^G^D' _zle_delete
 bindkey '^G^L' _zle_log
 bindkey '^G^M' _zle_merge
 bindkey '^G^S' _zle_switch
