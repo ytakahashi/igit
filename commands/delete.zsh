@@ -2,11 +2,11 @@ _igit_delete(){
 
     local branch
     while branch=$(
-        git branch -vv --color |
+        git branch -vv --color=always |
         egrep -v "^\*" |
         cut -b 3- |
         _fzf_for_igit --multi --expect=enter \
-        --preview "git show --color {1}"); do
+        --preview 'git show --color=always {1}'); do
 
         if [[ -z $branch ]]; then
             return 0
