@@ -2,11 +2,11 @@ _igit_switch(){
 
     local branch
     while branch=$(
-        git branch -a |
+        git branch -a -vv --color=always |
         egrep -v "\*|origin/HEAD" |
         cut -b 3- |
         _fzf_for_igit --no-multi --expect=enter \
-        --preview 'git diff --color=always {}'); do
+        --preview 'git show --color=always {1}'); do
 
         if [[ -z $branch ]]; then
             return 0
