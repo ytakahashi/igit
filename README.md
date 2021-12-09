@@ -11,6 +11,15 @@
 
 ## Install
 
+### With [zinit](https://github.com/zdharma-continuum/zinit)
+
+```zsh
+zinit light ytakahashi/igit
+
+# or
+# zinit load ytakahashi/igit
+```
+
 ### With [zplug](https://github.com/zplug/zplug) :hibiscus:
 
 ```zsh
