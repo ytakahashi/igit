@@ -36,13 +36,11 @@ source /path/to/igit.plugin.zsh
 
 ## Usage
 
-### Available commands
-
 ```shell
-% igit [command]
+igit [command]
 ```
 
-command: `add`, `branch`, `cherry-pick`, `delete`, `diff`, `log`, `merge`, `stash`, `switch`, `tag`
+command: `add`, `branch`, `cherry-pick`, `delete`, `diff`, `log`, `merge`, `stash`, `switch`, `tag`, `revert`
 
 ### Basic usage
 

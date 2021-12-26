@@ -9,7 +9,7 @@ source ${_igit_base_dir}/commands/merge.zsh
 source ${_igit_base_dir}/commands/stash.zsh
 source ${_igit_base_dir}/commands/switch.zsh
 source ${_igit_base_dir}/commands/tag.zsh
-
+source ${_igit_base_dir}/commands/revert.zsh
 
 igit() {
     if [ $# -lt 1 ]; then
@@ -46,6 +46,8 @@ igit() {
             _igit_switch ;;
         "tag")
             _igit_tag ;;
+        "revert")
+            _igit_revert ;;
         "help")
             _igit_usage ;;
         *)
@@ -53,7 +55,6 @@ igit() {
             return 1
     esac
 }
-
 
 _fzf_for_igit() {
     fzf --height 75% \
@@ -84,6 +85,7 @@ cat << EOF
     stash
     switch
     tag
+    revert
     help
 EOF
 }
@@ -101,6 +103,7 @@ _igit() {
         'stash' \
         'switch' \
         'tag' \
+        'revert' \
         'help'
 }
 
