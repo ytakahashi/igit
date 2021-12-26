@@ -42,7 +42,7 @@ source /path/to/igit.plugin.zsh
 % igit [command]
 ```
 
-command: `add`, `branch`, `cherry-pick`, `delete`, `diff`, `log`, `merge`, `stash`, `switch`, `tag`
+command: `add`, `branch`, `cherry-pick`, `delete`, `diff`, `log`, `merge`, `stash`, `switch`, `tag`, `revert`
 
 ### Basic usage
 
