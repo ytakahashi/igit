@@ -88,7 +88,7 @@ Show commit log and cherry-pick selected commit.
 
 | Key                                        | Description            |
 | :----------------------------------------- | :--------------------- |
-| <kbd>Alt</kbd>+<kbd>c</kbd>                | Cherry-pick the commit |
+| <kbd>Enter</kbd>                           | Cherry-pick the commit |
 
 ### igit diff
 
