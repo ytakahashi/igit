@@ -119,6 +119,9 @@ Show tags.
 
 | Key                                        | Description                  |
 | :----------------------------------------- | :--------------------------- |
+| <kbd>Ctrl</kbd>+<kbd>s</kbd>               | Show selected tag            |
+| <kbd>Alt</kbd>+<kbd>c</kbd>                | Show diff between the tags   |
+| <kbd>Alt</kbd>+<kbd>p</kbd>                | Push the tag to origin       |
 | <kbd>Alt</kbd>+<kbd>s</kbd>                | Switch to selected tag       |
 
 ## Key Bingings
