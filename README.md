@@ -90,6 +90,14 @@ Show commit log and cherry-pick selected commit.
 | :----------------------------------------- | :--------------------- |
 | <kbd>Enter</kbd>                           | Cherry-pick the commit |
 
+### igit delete
+
+Show branches and delete selected branch(es).
+
+| Key                                        | Description           |
+| :----------------------------------------- | :-------------------- |
+| <kbd>Enter</kbd>                           | Delete the branch(es) |
+
 ### igit diff
 
 Shows current status and see diff of selected file.
