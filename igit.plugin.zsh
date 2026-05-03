@@ -1,15 +1,15 @@
-_igit_base_dir=$(cd $(dirname $0); pwd)
-source ${_igit_base_dir}/commands/add.zsh
-source ${_igit_base_dir}/commands/branch.zsh
-source ${_igit_base_dir}/commands/cherry-pick.zsh
-source ${_igit_base_dir}/commands/delete.zsh
-source ${_igit_base_dir}/commands/diff.zsh
-source ${_igit_base_dir}/commands/log.zsh
-source ${_igit_base_dir}/commands/merge.zsh
-source ${_igit_base_dir}/commands/stash.zsh
-source ${_igit_base_dir}/commands/switch.zsh
-source ${_igit_base_dir}/commands/tag.zsh
-source ${_igit_base_dir}/commands/revert.zsh
+_igit_base_dir="${0:A:h}"
+source "${_igit_base_dir}/commands/add.zsh"
+source "${_igit_base_dir}/commands/branch.zsh"
+source "${_igit_base_dir}/commands/cherry-pick.zsh"
+source "${_igit_base_dir}/commands/delete.zsh"
+source "${_igit_base_dir}/commands/diff.zsh"
+source "${_igit_base_dir}/commands/log.zsh"
+source "${_igit_base_dir}/commands/merge.zsh"
+source "${_igit_base_dir}/commands/stash.zsh"
+source "${_igit_base_dir}/commands/switch.zsh"
+source "${_igit_base_dir}/commands/tag.zsh"
+source "${_igit_base_dir}/commands/revert.zsh"
 
 igit() {
     if [ $# -lt 1 ]; then
